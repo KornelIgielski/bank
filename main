@@ -1,0 +1,23 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Account account = new Account("Wiśniewski", "1263462324");
+        System.out.println(account);
+
+        account.deposit(150);
+        account.deposit(430);
+        account.withdraw(500);
+
+
+
+        Bank bank = new Bank("Wdlugach");
+        bank.addAccount(account);
+        bank.addAccount(new Account("Oles", "1324253"));
+
+        System.out.println(bank);
+        bank.removeAccount(account);
+        System.out.println(bank);
+    }
+}
