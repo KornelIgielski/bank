@@ -1,0 +1,69 @@
+# bank
+package com.company;
+
+public class Bank {
+    private Account acc1, acc2, acc3;
+    private String name;
+
+    Bank(String name){
+        this.name=name;
+        this.acc1 = this.acc2 = this.acc3 = null;
+    }
+    public void addAccount(Account account){
+        if(this.acc1==null){
+            this.acc1 = account;
+        }else if(this.acc2==null){
+            this.acc2 = account;
+        }else if(this.acc3==null){
+            this.acc3 = account;
+        }
+    }
+    public void removeAccount(Account account){
+        if(this.acc1==account){
+            this.acc1=null;
+        }else if(this.acc2==account) {
+            this.acc2 = null;
+        }else if(this.acc3==account) {
+            this.acc3 = null;
+        }
+    }
+
+    public void deposit(String number,int amount){
+        if(this.acc1.getNumber().equals(number)){
+            this.acc1.deposit(amount);
+        }
+        if(this.acc2.getNumber().equals(number)){
+            this.acc2.deposit(amount);
+        }
+        if(this.acc3.getNumber().equals(number)){
+            this.acc3.deposit(amount);
+        }
+    }
+    public void withdraw(String number,int amount){
+        if(this.acc1.getNumber().equals(number)){
+            this.acc1.withdraw(amount);
+        }
+        if(this.acc2.getNumber().equals(number)){
+            this.acc2.withdraw(amount);
+        }
+        if(this.acc3.getNumber().equals(number)){
+            this.acc3.withdraw(amount);
+        }
+
+    }
+
+    public String toString(){
+       String result = "BANK: " + this.name + "\n";
+
+       if(this.acc1 != null){
+           result +=this.acc1 + "\n";
+       }
+        if(this.acc2 != null){
+            result +=this.acc2 + "\n";
+        }
+        if(this.acc3 != null){
+            result +=this.acc3 + "\n";
+        }
+
+       return result;
+    }
