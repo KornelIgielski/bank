@@ -1,0 +1,33 @@
+# bank
+package com.company;
+public class Account {
+    private String surname, number;
+    private int balance;
+
+    public Account(String surname, String number) {
+        this.surname = surname;
+        this.number = number;
+        this.balance = 0;
+    }
+    public String getNumber(){
+        return this.number;
+    }
+
+    public void setNumber(String number){
+        this.number=number;
+    }
+
+    public void withdraw(int amount){
+        if(this.balance>=amount){
+            this.balance-=amount;
+        }
+
+    }
+    public void deposit(int amount)
+    {
+        this.balance=this.balance + amount;
+    }
+    public String toString(){
+        return "Nazwisko: " + surname + "\nNumer konta: " + number + "\nStan konta: " + balance;
+    }
+}
